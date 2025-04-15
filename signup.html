@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="nameError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" required>
+                <span class="error-message" id="surnameError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="emailError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
+                    <label><input type="radio" name="gender" value="prefer-not-to-say"> Prefer not to say</label>
+                </div>
+                <span class="error-message" id="genderError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                <span class="error-message" id="ageError"></span>
+            </div>
+            <section class="form-group">
+                <label for="cellphone">Cell Phone Number:</label>
+                <label class="phone-input-wrapper">
+                    <span class="country-code">+27</span>
+                    <input type="tel" id="cellphone" name="cellphone" 
+                           placeholder="123456789" required 
+                           maxlength="9" pattern="[0-9]{9}">
+                </label>
+                <label class="error-message" id="cellphoneError"></label>
+                <small class="hint">Enter your 9-digit number after +27</small>
+            </section>
+            
+            
+            <button type="submit" class="continue-btn">Continue</button>
+        </form>
+    </div>
+
+    <!-- Welcome Page (hidden initially) -->
+    <div id="welcomePage" class="welcome-container" style="display: none;">
+        <h1 id="welcomeMessage"></h1>
+        <p>Thank you for registering with us!</p>
+        <button id="backToForm" class="continue-btn">Back to Form</button>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>
